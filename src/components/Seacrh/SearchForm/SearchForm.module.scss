@@ -14,20 +14,16 @@
     align-items: flex-start;
     flex-direction: column;
   }
-  &__categories {
+  &__categori {
     margin-bottom: 30px;
     &__text {
       margin-right: 15px;
     }
-    &__field {
-    }
   }
-  &__sorting {
+  &__sort {
     margin-bottom: 30px;
     &__text {
       margin-right: 20px;
-    }
-    &__field {
     }
   }
   &__button {
