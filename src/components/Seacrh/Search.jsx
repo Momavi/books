@@ -1,10 +1,14 @@
 import SearchForm from "./SearchForm/SearchForm";
 
+import s from './Search.module.scss'
+
 function Search(props) {
   return (
-    <div>
-      <h1>Search for books</h1>
-      <SearchForm />
+    <div className={s.search}>
+      <div className={s.search__wrapper}>
+        <h1 className={s.search__title}>Search for books</h1>
+        <SearchForm />
+      </div>
     </div>
   )
 }

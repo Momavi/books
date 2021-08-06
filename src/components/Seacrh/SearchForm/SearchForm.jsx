@@ -1,5 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 
+import s from './SearchForm.module.scss'
+
 function Search(props) {
   return (
     <Formik
@@ -11,12 +13,12 @@ function Search(props) {
       onSubmit={values => {
         console.log(values)
       }}>
-      <Form className="login-form">
-        <Field name="text" />
-        <div className="login-form__input-text">
-          <div>
-            <label>Categories</label>
-            <Field name="caregories" as="select">
+      <Form className={s.form}>
+        <Field className={s.form__input} name="text" />
+        <div className={s.form__wrapper}>
+          <div className={s.form__categories}>
+            <label className={s.form__categories__text}>Categories</label>
+            <Field className={s.form__categories__field} name="caregories" as="select">
               <option value="all">All</option>
               <option value="art">Art</option>
               <option value="biography">Biography</option>
@@ -26,13 +28,15 @@ function Search(props) {
               <option value="poetry">Poetry</option>
             </Field>
           </div>
-          <label>Sorting by</label>
-          <Field name="sorting" as="select">
-            <option value="relevance">Relevance</option>
-            <option value="newest">Newest</option>
-          </Field>
+          <div className={s.form__sorting}>
+            <label className={s.form__sorting__text}>Sorting by</label>
+            <Field className={s.form__sorting__field} name="sorting" as="select">
+              <option value="relevance">Relevance</option>
+              <option value="newest">Newest</option>
+            </Field>
+          </div>
         </div>
-        <button type="submit">Submit</button>
+        <button className={s.form__button} type="submit">Submit</button>
       </Form>
     </Formik>
   );

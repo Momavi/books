@@ -1,0 +1,21 @@
+.search {
+  padding-bottom: 80px;
+  &__wrapper {
+    color: #fff;
+    width: 450px;
+    background: rgb(88, 2, 34);
+    background: linear-gradient(90deg, rgba(9, 26, 107, 1) 1%, rgba(9, 26, 107, 1) 99%);
+    border: 2px solid rgb(63, 56, 47);
+    border-top: none;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+  }
+  &__title {
+    font-size: 48px;
+    line-height: 48px;
+    margin: 0 0 40px 0;
+    padding-top: 40px;
+  }
+}
