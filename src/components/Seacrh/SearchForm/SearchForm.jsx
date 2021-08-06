@@ -1,38 +1,36 @@
 import { Formik, Form, Field } from 'formik';
+import SearchItem from './SearchItem/SearchItem';
 
 import s from './SearchForm.module.scss'
 
 function Search(props) {
+  let state = props.searchPage;
+
+  let categoriElements = state.categori.map(d => <SearchItem name={d.name} key={d.id} />);
+  let sortElement = state.sort.map(d => <SearchItem name={d.name} key={d.id} />);
   return (
     <Formik
       initialValues={{
         text: '',
-        caregories: 'all',
-        sorting: 'relevance',
+        categori: 'all',
+        sort: 'relevance',
       }}
       onSubmit={values => {
-        console.log(values)
+        alert(JSON.stringify(values, null, 2));
       }}>
       <Form className={s.form}>
         <Field className={s.form__input} name="text" />
         <div className={s.form__wrapper}>
-          <div className={s.form__categories}>
-            <label className={s.form__categories__text}>Categories</label>
-            <Field className={s.form__categories__field} name="caregories" as="select">
-              <option value="all">All</option>
-              <option value="art">Art</option>
-              <option value="biography">Biography</option>
-              <option value="computers">Computers</option>
-              <option value="history">History</option>
-              <option value="medical">Medical</option>
-              <option value="poetry">Poetry</option>
+          <div className={s.form__categori}>
+            <label className={s.form__categori__text}>Categories</label>
+            <Field className={s.form__categori__field} name="categori" as="select">
+              {categoriElements}
             </Field>
           </div>
-          <div className={s.form__sorting}>
-            <label className={s.form__sorting__text}>Sorting by</label>
-            <Field className={s.form__sorting__field} name="sorting" as="select">
-              <option value="relevance">Relevance</option>
-              <option value="newest">Newest</option>
+          <div className={s.form__sort}>
+            <label className={s.form__sort__text}>Sorting by</label>
+            <Field className={s.form__sort__field} name="sort" as="select">
+              {sortElement}
             </Field>
           </div>
         </div>

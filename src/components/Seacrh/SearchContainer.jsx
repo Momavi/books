@@ -1,15 +1,18 @@
 import Search from './Search';
-import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
-class SearchContainer extends React.Component {
-  componentDidMount() {
-  }
-
-  render() {
-    return (
-      <Search {...this.props} />
-    )
+let mapStateToProps = (state) => {
+  return {
+    searchPage: state.searchPage,
   }
 }
 
-export default SearchContainer;
+let mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+)(Search);
