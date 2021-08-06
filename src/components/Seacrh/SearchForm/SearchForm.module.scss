@@ -31,9 +31,10 @@
     }
   }
   &__button {
-    font-size: 14px;
+    font-size: 15px;
     color: #000;
-    background-color: #fff;
+    padding: 4px 15px;
+    background-color: rgba(250, 250, 250, 0.973);
     border: 1px solid #000;
     border-radius: 30px;
   }
