@@ -9,7 +9,7 @@ function App() {
       <SearchContainer />
       <Suspense fallback={<Preloader />}>
         <div className="content">
-
+          
         </div>
       </Suspense>
     </div>

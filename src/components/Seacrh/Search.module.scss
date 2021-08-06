@@ -1,16 +1,14 @@
 .search {
-  padding-bottom: 80px;
+  height: 70vh;
+  padding-top: 50px;
   &__wrapper {
-    color: rgba(250, 250, 250, 0.973);
+    color: rgba(0, 0, 0, 0.973);
     width: 450px;
-    background: rgb(88, 2, 34);
-    background: linear-gradient(90deg, rgba(9, 26, 107, 1) 1%, rgba(9, 26, 107, 1) 99%);
-    border: 2px solid rgb(63, 56, 47);
-    border-top: none;
-    border-bottom-left-radius: 120px;
-    border-bottom-right-radius: 120px;
+    background-color: #fff;
+    border: 2px solid rgb(0, 188, 212);
+    border-radius: 75px;
     margin: 0 auto;
-    padding-bottom: 40px;
+    padding: 20px 10px;
   }
   &__title {
     font-size: 48px;

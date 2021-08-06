@@ -3,9 +3,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000;
-  background: no-repeat rgb(0, 5, 70);
-  background: radial-gradient(circle, rgba(0, 5, 70, 1) 0%, rgba(6, 1, 73, 1) 10%, rgba(1, 0, 15, 1) 21%);
+  background: #87ceeb;
 }
 
 code {
