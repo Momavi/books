@@ -1,6 +1,6 @@
-function DialogItem(props) {
+function SearchItem(props) {
   return (
     <option value={props.name}>{props.name}</option>
   )
 }
-export default DialogItem
+export default SearchItem
