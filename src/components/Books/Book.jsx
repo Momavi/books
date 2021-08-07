@@ -6,6 +6,9 @@ let Book = ({ book }) => {
 
   return (
     <div key={book.id}>
+      <div className={s.book__name}>
+        <h3>{volume.title}</h3>
+      </div>
       <div className={s.book__authors}>
         <span>Авторы: </span>
         <BookMapArray volume={volume.authors} />
