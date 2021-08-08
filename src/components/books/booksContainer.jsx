@@ -10,24 +10,25 @@ import {
   getCurrentPage,
   getIsFetching,
 } from '../../redux/books-selector'
-import Preloader from './../common/preloader/Preloader'
 
 class BooksContainer extends React.Component {
   componentDidMount() {
-    this.props.getBooks();
+    const { currentPage } = this.props;
+    this.props.getBooks(currentPage, 'apple', 30);
   }
   onPageChanged = (pageNumber) => {
-    this.props.getBooks();
+    this.props.getBooks(pageNumber, 'apple', 30);
   }
   render() {
     return (
       <>
-        {this.props.isFetching ? <Preloader /> : null}
         <Books
           books={this.props.books}
           pageSize={this.props.pageSize}
+          onPageChanged={this.onPageChanged}
           totalBooksCount={this.props.totalBooksCount}
           currentPage={this.props.currentPage}
+          isFetching={this.props.isFetching}
         />
       </>
     )

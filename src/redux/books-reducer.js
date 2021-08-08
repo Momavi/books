@@ -36,11 +36,13 @@ export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, curren
 export const setTotalBooksCount = (totalBooks) => ({ type: SET_TOTAL_BOOKS_COUNT, totalBooks })
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
-export const getBooks = (sort, category) => {
+export const getBooks = (currentPage, sortText, maxResults) => {
   return async (dispatch) => {
     dispatch(toggleIsFetching(true));
+    dispatch(setCurrentPage(currentPage));
 
-    let data = await booksAPI.getBooks()
+    let currentStartIndex = currentPage * maxResults
+    let data = await booksAPI.getBooks(sortText, currentStartIndex, maxResults)
     dispatch(toggleIsFetching(false));
     dispatch(setBooks(data.data.items));
     dispatch(setTotalBooksCount(data.data.totalItems));

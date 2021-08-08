@@ -7,7 +7,13 @@ let Book = ({ book }) => {
   return (
     <div className={s.book__wrapper} key={book.id}>
       <div className={s.book__inner}>
-        <img className={s.book__image__img} src={volume.imageLinks.thumbnail} alt="" />
+        <img className={s.book__image__img} src={
+          volume.imageLinks !== undefined
+            ?
+            volume.imageLinks.thumbnail
+            :
+            null
+        } alt="" />
         <div className={s.book__info}>
           <h3 className={s.book__title}>{volume.title}</h3>
           <div className={s.book__description}>
