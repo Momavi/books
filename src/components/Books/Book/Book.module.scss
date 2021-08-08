@@ -1,4 +1,5 @@
 .book {
+  line-height: 18px;
   &__wrapper {
     display: flex;
     align-items: flex-start;
@@ -9,9 +10,9 @@
   &__inner {
     height: 300px;
     background-color: rgba(238, 254, 255, 0.911);
-    border: 1px solid transparent;
+    border: 1px solid #00bcd4;
     border-radius: 45px;
-    padding: 15px 10px 20px 10px;
+    padding: 15px 10px 30px 10px;
     margin: 0 15px;
     transition: all 0.3s;
     cursor: pointer;
@@ -21,6 +22,7 @@
   }
   &__title {
     width: 350px;
+    height: 60px;
   }
   &__image {
     margin: 0 15px;
@@ -29,10 +31,12 @@
     }
   }
   &__info {
+    width: 350px;
     min-height: 125px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
   }
   &__authors {
     margin-bottom: 10px;
