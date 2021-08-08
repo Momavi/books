@@ -1,0 +1,42 @@
+.book {
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: 40px;
+  }
+  &__inner {
+    height: 300px;
+    background-color: rgba(238, 254, 255, 0.911);
+    border: 1px solid transparent;
+    border-radius: 45px;
+    padding: 15px 10px 20px 10px;
+    margin: 0 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover{
+      transform: scale(1.05);
+    }
+  }
+  &__title {
+    width: 350px;
+  }
+  &__image {
+    margin: 0 15px;
+    &__img {
+      height: 150px;
+    }
+  }
+  &__info {
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__authors {
+    margin-bottom: 10px;
+  }
+  &__categories {
+  }
+}
