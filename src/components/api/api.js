@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 export const booksAPI = {
-  getBooks() {
-    return instance.get(`volumes?q=javascript&key=AIzaSyCtNydhUF3PxH_n7KSa5WimBl_qLIwQyHg`)
+  getBooks(sortText = 'javascript', startIndex = 0, maxResults = 30) {
+    return instance.get(`volumes?q=${sortText}&startIndex=${startIndex}&maxResults=${maxResults}`)
   }
 }
