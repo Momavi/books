@@ -10,6 +10,7 @@ import {
   getTotalBooksCount,
   getCurrentPage,
   getIsFetching,
+  getFormData,
 } from '../../redux/books-selector'
 
 class BooksContainer extends React.Component {
@@ -48,6 +49,7 @@ let mapStateToProps = (state) => {
     totalBooksCount: getTotalBooksCount(state),
     currentPage: getCurrentPage(state),
     isFetching: getIsFetching(state),
+    formData: getFormData(state),
   }
 }
 
