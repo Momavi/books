@@ -17,3 +17,7 @@ export const getCurrentPage = (state) => {
 export const getIsFetching = (state) => {
   return state.booksPage.isFetching;
 }
+
+export const getFormData = (state) => {
+  return state.booksPage.formData;
+}

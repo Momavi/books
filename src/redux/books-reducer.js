@@ -10,7 +10,25 @@ let initialtState = {
   pageSize: 30,
   totalBooks: 0,
   currentPage: 1,
-  isFetching: true,
+  isFetching: false,
+  categori: [
+    { id: 1, name: 'All' },
+    { id: 2, name: 'Art' },
+    { id: 3, name: 'Biography' },
+    { id: 4, name: 'Computers' },
+    { id: 5, name: 'History' },
+    { id: 6, name: 'Medical' },
+    { id: 7, name: 'Poetry' },
+  ],
+  sort: [
+    { id: 1, name: 'Relevance' },
+    { id: 2, name: 'Newest' },
+  ],
+  formData: {
+    text: '',
+    categori: 'all',
+    sort: 'relevance',
+  }
 };
 
 function booksReducer(state = initialtState, action) {
@@ -36,17 +54,18 @@ export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, curren
 export const setTotalBooksCount = (totalBooks) => ({ type: SET_TOTAL_BOOKS_COUNT, totalBooks })
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
-export const getBooks = (currentPage, sortText, maxResults) => {
+export const getBooks = (values, currentPage = 1, maxResults = 30) => {
   return async (dispatch) => {
     dispatch(toggleIsFetching(true));
-    dispatch(setCurrentPage(currentPage));
 
-    let currentStartIndex = currentPage * maxResults
-    let data = await booksAPI.getBooks(sortText, currentStartIndex, maxResults)
-    dispatch(toggleIsFetching(false));
-    dispatch(setBooks(data.data.items));
+    let currentStartIndex = (currentPage * maxResults) - maxResults
+    let data = await booksAPI.getBooks(values, currentStartIndex, maxResults)
+
     dispatch(setTotalBooksCount(data.data.totalItems));
+    dispatch(setBooks(data.data.items));
+    dispatch(toggleIsFetching(false));
   }
 }
+
 
 export default booksReducer;
