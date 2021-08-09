@@ -5,7 +5,7 @@ let Book = ({ book }) => {
   let volume = book.volumeInfo;
 
   return (
-    <div className={s.book__wrapper} key={book.id}>
+    <div className={s.book__wrapper} key={book.etag}>
       <div className={s.book__inner}>
         <img className={s.book__image__img} src={
           volume.imageLinks !== undefined

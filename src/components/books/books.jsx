@@ -24,7 +24,7 @@ function Books({ books, onPageChanged, pageSize, totalBooksCount, currentPage, i
             books.map((u) =>
               <Book
                 book={u}
-                key={u.id} />
+                key={u.etag} />
             )
             :
             <span className={s.error}>Книги пропали(попробуйте снова)</span>
