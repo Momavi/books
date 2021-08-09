@@ -2,7 +2,8 @@ import React from 'react';
 import Books from './Books';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { getBooks, setCurrentPage } from '../../redux/books-reducer';
+import Preloader from './../common/preloader/Preloader'
+import { getBooks, setCurrentPage } from './../../redux/books-reducer';
 import {
   getBooksState,
   getPageSize,
@@ -13,23 +14,28 @@ import {
 
 class BooksContainer extends React.Component {
   componentDidMount() {
-    const { currentPage } = this.props;
-    this.props.getBooks(currentPage, 'apple', 30);
   }
   onPageChanged = (pageNumber) => {
-    this.props.getBooks(pageNumber, 'apple', 30);
+    this.props.setCurrentPage(pageNumber)
+    this.props.getBooks(this.props.formData, pageNumber, 30)
   }
   render() {
     return (
       <>
-        <Books
-          books={this.props.books}
-          pageSize={this.props.pageSize}
-          onPageChanged={this.onPageChanged}
-          totalBooksCount={this.props.totalBooksCount}
-          currentPage={this.props.currentPage}
-          isFetching={this.props.isFetching}
-        />
+        {
+          !this.props.isFetching
+            ?
+            <Books
+              books={this.props.books}
+              pageSize={this.props.pageSize}
+              onPageChanged={this.onPageChanged}
+              totalBooksCount={this.props.totalBooksCount}
+              currentPage={this.props.currentPage}
+              isFetching={this.props.isFetching}
+            />
+            :
+            <Preloader />
+        }
       </>
     )
   }

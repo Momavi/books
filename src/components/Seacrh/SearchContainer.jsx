@@ -1,18 +1,14 @@
 import Search from './Search';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { setFormData, getBooks } from './../../redux/books-reducer'
 
 let mapStateToProps = (state) => {
   return {
-    searchPage: state.searchPage,
-  }
-}
-
-let mapDispatchToProps = (dispatch) => {
-  return {
+    booksPage: state.booksPage,
   }
 }
 
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps, { setFormData, getBooks }),
 )(Search);

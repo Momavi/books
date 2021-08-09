@@ -4,7 +4,7 @@ import SearchItem from './SearchItem/SearchItem';
 import s from './SearchForm.module.scss'
 
 function Search(props) {
-  let state = props.searchPage;
+  let state = props.booksPage;
 
   let categoriElements = state.categori.map(d => <SearchItem name={d.name} key={d.id} />);
   let sortElement = state.sort.map(d => <SearchItem name={d.name} key={d.id} />);
@@ -16,7 +16,8 @@ function Search(props) {
         sort: 'relevance',
       }}
       onSubmit={values => {
-        alert(JSON.stringify(values, null, 2));
+        props.setFormData(values)
+        props.getBooks(values, 1, props.booksPage.pageSize)
       }}>
       <Form className={s.form}>
         <Field className={s.form__input} name="text" />

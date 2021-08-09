@@ -7,7 +7,7 @@ function Search(props) {
     <div className={s.search}>
       <div className={s.search__wrapper}>
         <h1 className={s.search__title}>Search for books</h1>
-        <SearchForm searchPage={props.searchPage} />
+        <SearchForm booksPage={props.booksPage} setFormData={props.setFormData} getBooks={props.getBooks}/>
       </div>
     </div>
   )
