@@ -1,7 +1,7 @@
 import s from './Book.module.scss'
 import BookMapArray from './BookMapArray';
 
-let Book = ({ book }) => {
+let Book = ({ book, togglePopupOpen, isPopupOpen }) => {
   let volume = book.volumeInfo;
 
   return (
@@ -27,8 +27,9 @@ let Book = ({ book }) => {
             </div>
           </div>
         </div>
+        <button onClick={() => { togglePopupOpen(book, !isPopupOpen) }} className={s.book__btn}>Show more</button>
       </div>
-    </div>
+    </div >
   )
 }
 

@@ -1,9 +1,9 @@
-import Book from "./Book/Book";
-import Paginator from './../common/paginator/paginator'
-import Preloader from './../common/preloader/Preloader'
-import s from './Books.module.scss'
+import Book from './Book/Book';
+import Paginator from './../common/paginator/paginator';
+import Preloader from './../common/preloader/Preloader';
+import s from './Books.module.scss';
 
-function Books({ books, onPageChanged, pageSize, totalBooksCount, currentPage, isFetching }) {
+function Books({ books, onPageChanged, pageSize, totalBooksCount, currentPage, isFetching, isPopupOpen, togglePopupOpen }) {
   return (
     <div>
       <h2>Total books we found: {totalBooksCount}</h2>
@@ -24,7 +24,10 @@ function Books({ books, onPageChanged, pageSize, totalBooksCount, currentPage, i
             books.map((u) =>
               <Book
                 book={u}
-                key={u.etag} />
+                key={u.etag}
+                isPopupOpen={isPopupOpen}
+                togglePopupOpen={togglePopupOpen}
+              />
             )
             :
             <span className={s.error}>Книги пропали(попробуйте снова)</span>

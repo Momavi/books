@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './../common/preloader/Preloader'
 import { getBooks, setCurrentPage } from './../../redux/books-reducer';
+import { setPopupData, togglePopupOpen } from './../../redux/popup-reducer'
 import {
   getBooksState,
   getPageSize,
@@ -21,6 +22,7 @@ class BooksContainer extends React.Component {
     this.props.getBooks(this.props.formData, pageNumber, 30)
   }
   render() {
+
     return (
       <>
         {
@@ -33,6 +35,9 @@ class BooksContainer extends React.Component {
               totalBooksCount={this.props.totalBooksCount}
               currentPage={this.props.currentPage}
               isFetching={this.props.isFetching}
+
+              isPopupOpen={this.props.isPopupOpen}
+              togglePopupOpen={this.props.togglePopupOpen}
             />
             :
             <Preloader />
@@ -50,9 +55,12 @@ let mapStateToProps = (state) => {
     currentPage: getCurrentPage(state),
     isFetching: getIsFetching(state),
     formData: getFormData(state),
+
+    isPopupOpen: state.popupPage.isPopupOpen,
+    togglePopupOpen: togglePopupOpen
   }
 }
 
 export default compose(
-  connect(mapStateToProps, { getBooks, setCurrentPage }),
+  connect(mapStateToProps, { getBooks, setCurrentPage, setPopupData, togglePopupOpen }),
 )(BooksContainer);
