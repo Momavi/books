@@ -1,0 +1,35 @@
+.popup {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, .2);
+  backdrop-filter: blur(10px);
+  &.open {
+    height: 100%;
+    display: block;
+  }
+  &.close {
+    height: 0;
+    display: none;
+  }
+  &__body {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 70%;
+    overflow-y: scroll;
+  }
+  &__close {
+    text-align: right;
+    margin-top: -15px;
+    font-size: 40px;
+    cursor: pointer;
+    color: gray;
+  }
+  &__description{
+    text-align: left;
+  }
+}

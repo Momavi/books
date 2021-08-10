@@ -1,12 +1,14 @@
 import { Suspense } from 'react';
 import Preloader from './components/common/preloader/Preloader';
-import './App.css';
 import SearchContainer from './components/Seacrh/SearchContainer';
 import BooksContainer from './components/Books/BooksContainer';
+import PopupContainer from './components/common/popup/PopupContainer';
+import './App.css';
 
 function App(props) {
   return (
     <div className="App">
+      <PopupContainer />
       <SearchContainer />
       <Suspense fallback={<Preloader />}>
         <div className="content">
