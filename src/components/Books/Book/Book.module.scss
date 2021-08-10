@@ -22,7 +22,7 @@
     }
   }
   &__title {
-    width: 350px;
+    max-width: 350px;
   }
   &__image {
     margin: 0 15px;
@@ -52,6 +52,14 @@
     &:hover {
       background-color: rgba(118, 99, 221, 0.767);
       border: 1px solid rgba(241, 162, 162, 0.24);
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .book {
+    &__info {
+      width: 250px;
     }
   }
 }

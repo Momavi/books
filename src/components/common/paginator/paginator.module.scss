@@ -33,3 +33,26 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .counter {
+    font-size: 16px;
+    &__item {
+      margin-right: 10px;
+      &:nth-child(11n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .counter {
+    &__item {
+      margin-right: 7px;
+      &:nth-child(11n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
