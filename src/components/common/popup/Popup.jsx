@@ -4,7 +4,6 @@ import BookMapArray from './../../Books/Book/BookMapArray'
 let Popup = (props) => {
   let popupPage = props.popupPage
   let volume = props.popupPage.popupData.volumeInfo
-  console.log(volume)
   return (
     <div>
       {
