@@ -1,5 +1,7 @@
 .counter {
   height: 40px;
+  max-width: 600px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,11 +9,10 @@
   background-color: rgba(238, 254, 255, 0.911);
   border: 1px solid #000;
   border-radius: 45px;
-  width: 500px;
   font-size: 18px;
   &__item {
     margin-right: 15px;
-    &:nth-child(10) {
+    &:nth-child(11n) {
       margin-right: 0;
     }
   }

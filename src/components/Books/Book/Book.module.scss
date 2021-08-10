@@ -8,7 +8,7 @@
     margin-bottom: 40px;
   }
   &__inner {
-    height: 350px;
+    max-height: 450px;
     background-color: rgba(238, 254, 255, 0.911);
     border: 1px solid #00bcd4;
     border-radius: 45px;
@@ -16,13 +16,13 @@
     margin: 0 15px;
     transition: all 0.3s;
     cursor: pointer;
-    &:hover{
-      transform: scale(1.05);
+    &:hover {
+      background-color: rgba(206, 231, 231, 0.911);
+      border: 1px solid #ee000041;
     }
   }
   &__title {
     width: 350px;
-    height: 60px;
   }
   &__image {
     margin: 0 15px;
@@ -39,5 +39,19 @@
   }
   &__authors {
     margin-bottom: 10px;
+  }
+  &__categories {
+    margin-bottom: 20px;
+  }
+  &__btn {
+    background-color: rgba(170, 224, 247, 0.911);
+    border: 1px solid rgba(44, 3, 8, 0.473);
+    border-radius: 10px;
+    padding: 5px 15px;
+    transition: all 0.4s;
+    &:hover {
+      background-color: rgba(118, 99, 221, 0.767);
+      border: 1px solid rgba(241, 162, 162, 0.24);
+    }
   }
 }
