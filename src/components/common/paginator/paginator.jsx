@@ -3,7 +3,7 @@ import s from './paginator.module.scss'
 import cn from 'classnames';
 
 let Paginator = ({ totalBooksCount, pageSize, currentPage, onPageChanged, portionSize = 10 }) => {
-  let pagesCount = Math.ceil(totalBooksCount / pageSize) - 1;
+  let pagesCount = Math.ceil(totalBooksCount / pageSize);
   let pages = [];
   for (let i = 1; i <= pagesCount - 1; i++) {
     pages.push(i);
