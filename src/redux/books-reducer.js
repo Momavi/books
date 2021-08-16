@@ -1,4 +1,4 @@
-import { booksAPI } from "../components/api/api";
+import { booksAPI } from "./../api/api";
 
 const SET_BOOKS = 'SET_BOOKS'
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'

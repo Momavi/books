@@ -6,7 +6,7 @@ const instance = axios.create({
 
 export const booksAPI = {
   getBooks(sortText = 'javascript', startIndex = 0, maxResults = 30) {
-    let keyAPI = 'AIzaSyCtNydhUF3PxH_n7KSa5WimBl_qLIwQyHg'
+    const keyAPI = 'AIzaSyCtNydhUF3PxH_n7KSa5WimBl_qLIwQyHg'
     let subject = sortText.categori === 'all' ?
       '' :
       `+subject:${sortText.categori}`
